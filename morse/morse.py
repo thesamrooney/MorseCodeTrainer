@@ -1,8 +1,10 @@
 
 
 # The standard word used for words-per-minute calculation.
-STANDARD_WORD = "PARIS "
+from multiprocessing.sharedctypes import Value
 
+
+STANDARD_WORD = "PARIS "
 
 # International Morse Code characters
 ITU_CHARS = {
@@ -65,6 +67,32 @@ def text_to_morse(text: str):
 
     return output
 
+
+def morse_to_timing(morse: str):
+    # Convert Morse Code string into timing string.
+    # The output will only contain dashes and underscores, indicating on and off respectively.
+
+    # Rules:
+    # - A dit (.) is equal to one unit of time.
+    # - A dah (-) is equal to three units of time.
+    # - Two elements of the same character are separated by one off unit of time.
+    # - Two characters are separated by three off units of time.
+    # - Two words are separated by seven off units of time.
+
+    output = ""
+    for c in morse:
+        if c == ".":
+            output += "-_"
+        elif c == "-":
+            output += "---_"
+        elif c == " ":
+            output += "__"  # extend space to three units
+        elif c == "/":
+            output += "______"  # extend space to seven units
+        else:
+            raise ValueError("Invalid character " + c + " included in Morse Code input: " + morse)
+    
+    return output
 
 
 
