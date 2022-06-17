@@ -1,5 +1,6 @@
 from morse import text_to_morse
 from morse import morse_to_timing
+from morse import STANDARD_WORD
 
 
 print("Testing that all alphanumeric characters work...")
@@ -41,5 +42,8 @@ for invalid_char in ",!@#$%^&*()_[]{}:;\"'\\|`~<>?=+\t\n\rABCDEFGHIJKLMNOPQRSTUV
     except ValueError:
         assert True
 
+print("Testing number of time units in the standard word...")
+
+assert len(morse_to_timing(text_to_morse(STANDARD_WORD))) == 50, "Standard word must have a timing length of 50 units."
 
 print("Testing successful!")
