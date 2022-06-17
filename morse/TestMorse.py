@@ -1,6 +1,6 @@
-from morse import text_to_morse
-from morse import morse_to_timing
-from morse import STANDARD_WORD
+from Morse import text_to_morse
+from Morse import morse_to_timing
+from Morse import STANDARD_WORD
 
 
 print("Testing that all alphanumeric characters work...")
