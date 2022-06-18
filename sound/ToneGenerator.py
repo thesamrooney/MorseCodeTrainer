@@ -7,7 +7,7 @@ class ToneGenerator():
     def __init__(self):
         self.sample_rate = 44100  # Hertz
 
-    def createTone(self, freq=1000, length=1.0, vol=1.0):
+    def create_tone(self, freq=1000, length=1.0, vol=1.0):
         # Frequency in Hz
         # Length in seconds
         # Volume in ratio
@@ -30,7 +30,7 @@ class ToneGenerator():
                 raise ValueError("Invalid timing character " + c + " in: " + timing)
         return output
 
-    def writeWav(self, name, signal):
+    def write_wav(self, name, signal):
         wavfile.write(name, self.sample_rate, signal)
 
 
