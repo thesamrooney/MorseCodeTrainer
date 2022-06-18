@@ -48,16 +48,19 @@ ITU_CHARS = {
 }
 
 
-def text_to_morse(text: str):
-    # convert a string of characters to a Morse Code string.
-
-    up_text = text.upper()  # ignore case
+"""
+Encode an alphanumeric string in Morse code using the ITU (International Morse Code) alphabet.
+"""
+def encode_text(text: str):
+    # ignore case, remove leading and trailing spaces
+    up_text = text.upper().strip()  
     output = ""
 
     for c in up_text:
         if c in ITU_CHARS.keys():
             if c == " " and len(output) > 0:
-                output = output.strip()  # remove trailing spaces when we end a word
+                # remove trailing spaces when we end a word
+                output = output.strip()
             output += ITU_CHARS[c]
         else:
             raise ValueError("Parameter string contained illegal character " + c + ": " + text)
@@ -68,23 +71,28 @@ def text_to_morse(text: str):
     return output
 
 
-def morse_to_timing(morse: str):
-    # Convert Morse Code string into timing string.
-    # The output will only contain dashes and underscores, indicating on and off respectively.
+"""
+Convert Morse Code string into timing string.
+The output will only contain dashes and underscores, indicating on and off respectively.
 
-    # Rules:
-    # - A dit (.) is equal to one unit of time.
-    # - A dah (-) is equal to three units of time.
-    # - Two elements of the same character are separated by one off unit of time.
-    # - Two characters are separated by three off units of time.
-    # - Two words are separated by seven off units of time.
+Rules:
+- A dit (.) is equal to one unit of time.
+- A dah (-) is equal to three units of time.
+- Two elements of the same character are separated by one off unit of time.
 
+Rules below may be warped by Farnsworth compression.
+
+- Two characters are separated by three off units of time.
+- Two words are separated by seven off units of time.
+"""
+def get_timing(morse: str):
+    
     output = ""
     for c in morse:
         if c == ".":
-            output += "-_"
+            output += "-_"  # one space between every character
         elif c == "-":
-            output += "---_"
+            output += "---_"  # one space between every character
         elif c == " ":
             output += "__"  # extend space to three units
         elif c == "/":
@@ -97,5 +105,5 @@ def morse_to_timing(morse: str):
 
 
 if __name__ == "__main__":
-    print(text_to_morse("The quick brown fox jumped over the lazy dog"))
-    print(text_to_morse(STANDARD_WORD))
+    print(encode_text("The quick brown fox jumped over the lazy dog"))
+    print(get_timing(encode_text(STANDARD_WORD)))
