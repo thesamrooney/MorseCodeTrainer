@@ -8,7 +8,7 @@ class ToneGenerator():
 
     def __init__(self, wpm=20):
         self.sample_rate = 44100  # Hertz
-        self.wpm = 20
+        self.wpm = wpm
         self.time_unit_s = (60 / self.wpm) / UNITS_PER_STANDARD_WORD
 
     def create_tone(self, freq=1000, length=1.0, vol=1.0):
