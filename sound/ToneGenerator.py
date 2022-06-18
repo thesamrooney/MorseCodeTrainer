@@ -13,6 +13,7 @@ class ToneGenerator():
         # Volume in ratio
         t = np.arange(0, length, 1/self.sample_rate)
         tone = np.int16(np.sin(2*np.pi*freq*t)*32767*vol)
+        return tone
 
     def make_timing_function(self, timing: str):
         output = np.array()
