@@ -151,13 +151,13 @@ class MorseGenerator:
 
             for c in timing:
                 if c  == "-":
-                    morse_heaviside.append(high_unit)
+                    morse_heaviside = np.append(morse_heaviside, high_unit)
                 elif c == "_":
-                    morse_heaviside.append(low_unit)
+                    morse_heaviside = np.append(morse_heaviside, low_unit)
                 elif c == " ":
-                    morse_heaviside.append(inter_char)
+                    morse_heaviside = np.append(morse_heaviside, inter_char)
                 elif c == "/":
-                    morse_heaviside.append(inter_word)
+                    morse_heaviside = np.append(morse_heaviside, inter_word)
                 else:
                     raise ValueError("Invalid timing character " + c + " in: " + timing)
         
