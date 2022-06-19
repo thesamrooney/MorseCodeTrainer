@@ -10,7 +10,7 @@ from scipy.io import wavfile
 
 class MorseGenerator:
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.sample_rate = 44100  # Hz
         self.standard_word = "PARIS"
         self.itu_char_set = {
