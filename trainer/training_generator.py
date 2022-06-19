@@ -1,9 +1,9 @@
 
 from numpy import array
-from resources.word_filter import WordFilter
+from trainer.word_filter import WordFilter
 import random
 
-class TrainingGenerator:
+class TrainingDataGenerator:
     
     def __init__(self) -> None:
         self.words = []
@@ -24,9 +24,3 @@ class TrainingGenerator:
         filt = WordFilter(available_chars)
         selected_words = random.sample(list(filter(filt.check_word, self.words)), num_words)
         return " ".join(selected_words).replace("\n", "")
-
-
-if __name__ == "__main__":
-    gen = TrainingGenerator()
-    print(gen.random_chars(["K", "M", "O"]))
-    print(gen.random_english())
