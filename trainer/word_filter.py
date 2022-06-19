@@ -1,7 +1,4 @@
 
-from pyparsing import Word
-
-
 class WordFilter:
 
     def __init__(self, available_chars:list):
