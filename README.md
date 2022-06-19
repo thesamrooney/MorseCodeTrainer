@@ -22,6 +22,8 @@ Please note that this document includes the ARRL Morse Transmission Timing Stand
 
 The ITU Morse Code standard is located on [itu.int](https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.1677-1-200910-I!!PDF-E.pdf).
 
+For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ecprice/wordlist.10000) from MIT.
+
 ## TODO
 - [x] Morse audio
     - [x] Generate Morse code messages from text
@@ -38,8 +40,8 @@ The ITU Morse Code standard is located on [itu.int](https://www.itu.int/dms_pubr
 
 - [ ] Trainer
     - [ ] Generate training audio
-        - [ ] Random character mode (with limited selection of characters)
-        - [ ] Random English words mode (with limited selection of characters)
+        - [x] Random character mode (with limited selection of characters)
+        - [x] Random English words mode (with limited selection of characters)
         - [ ] Excerpts from the wild? (for review mode)
     - [ ] Session
         - [ ] Investigate session length(s)
