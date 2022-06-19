@@ -87,7 +87,7 @@ class MorseGenerator:
         output.append("/")
         return "".join(output)
 
-    def generate_timing(self, morse:str, farnsworth_timing:bool=False) -> str:
+    def generate_timing(self, morse:str, farnsworth_timing:bool=True) -> str:
         output = [""]
         for c in morse:
             if c == ".":
@@ -203,7 +203,7 @@ if __name__ == "__main__":
 
     print("Testing timing string generator...")
 
-    assert gen.generate_timing(".- .../---/") == "-_---___-_-_-_______---_---_---_______"
+    assert gen.generate_timing(".- .../---/", False) == "-_---___-_-_-_______---_---_---_______"
 
     # Check that all characters work:
     morsetext = gen.encode_morse("The quick brown fox jumps over the lazy dog".upper())
@@ -229,6 +229,6 @@ if __name__ == "__main__":
 
     print("Testing number of time units in the standard word...")
 
-    assert len(gen.generate_timing((gen.encode_morse(gen.standard_word)))) == 50, "Standard word must have a timing length of 50 units."
+    assert len(gen.generate_timing(gen.encode_morse(gen.standard_word), False)) == 50, "Standard word must have a timing length of 50 units."
 
     print("Testing successful!")
