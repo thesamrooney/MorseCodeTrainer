@@ -42,37 +42,30 @@ For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ec
     - [x] Play pre-generated sound (playsound library)
 
 - [x] Code structure
-    - [x] Single class for full audio/text generation workflow
+    - [x] Single class for text conversion/audio generation workflow
 
 - [ ] Trainer
-    - [x] Generate training audio
+    - [x] Generate training data
         - [x] Random character mode (with limited selection of characters)
         - [x] Random English words mode (with limited selection of characters)
             - [ ] Filter word list (clean words only!)
         - [ ] Excerpts from the wild? (for review mode)
     - [ ] Session
         - [ ] Investigate session length(s)
-        - [ ] Progression
-            - [ ] Overall accuracy above 90%?
-            - [ ] Specific characters or random?
         - [ ] Multiple types of sessions?
             - [ ] Character introduction
             - [ ] Review session
             - [ ] Knowledge maintenance session
-    - [ ] Grading
-        - [ ] Grade individual words
-        - [ ] Change grading based on session length?
-    - [ ] Save progress
-        - [ ] Save accuracy by character
-        - [ ] Save character progress
-        - [ ] Save datetime of session?
-        - [ ] Graph progress
-            - [ ] Matplotlib, or another library?
-            - [ ] By datetime?
-            - [ ] By session?
-        - [ ] Save data as CSV
+        - [ ] Grading
+            - [ ] Automatically calculated accuracy %
+            - [ ] Grade by word, then by letter?
+    - [ ] Progression
+        - [ ] Character learn order
+        - [ ] Save progress per character
+        - [ ] Save progress in CSV format (for later graphing)?
     - [ ] GUI
         - [ ] Investigate cross-platform GUI libraries
             - [ ] Would a mobile app be worth it?
+        - [ ] Graphing progress?
         - [ ] Create flow chart / state machine for GUI flow
 
