@@ -45,8 +45,6 @@ if __name__ == "__main__":
 
 
     # for WordFilter
-    import random
-
     words = []
     mit_10k = open("./trainer/resources/mit_10k_words.txt", "r")
     for word in mit_10k:
