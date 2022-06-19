@@ -13,6 +13,10 @@ Compare that with reality and calculate a percentage score: if the learner score
 When the user is 90% accurate add another unique character and repeat until the learner is again at 90% accuracy.
 Repeat this process until all characters are in play.
 
+## Farnsworth timing
+
+Farnsworth timing, invented by Donald R. Farnsworth (W6TTB) in the 1950s, is a method of slowing down the rate at which words are sent in Morse code without slowing down the speed of the charaters themselves. Typically, the time between character elements is kept at 20-35 words per minute, while the time between characters and words may be slowed down to as low as 5 words per minute. A more in-depth explanation is available on the ARRL website, link below.
+
 ## Resources
 
 An excellent resource on the Koch method is available on [qsl.net](https://www.qsl.net/n1irz/finley.morse.html).
