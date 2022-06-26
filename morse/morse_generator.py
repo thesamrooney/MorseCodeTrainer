@@ -122,7 +122,7 @@ class MorseGenerator:
 
         morse_heaviside = np.array([])
 
-        if farnsworth <= 0 or farnsworth == wpm:
+        if farnsworth <= 0 or farnsworth >= wpm:
             # no Farnsworth compression
             # replace Farnsworth markers with unit lengths
             fixed_timing = timing.replace(" ", "___")  # inter-char spacing
@@ -143,8 +143,8 @@ class MorseGenerator:
             t_c = (3 / 19) * t_a  # inter-char spacing
             t_w = (7 / 19) * t_a  # inter-word spacing
 
-            t_c_len_i = len(np.arange(0, t_c, 1/self.sample_rate))
-            t_w_len_i = len(np.arange(0, t_w, 1/self.sample_rate))
+            t_c_len_i = int(t_c * self.sample_rate)
+            t_w_len_i = int(t_w * self.sample_rate)
 
             inter_char = np.zeros((t_c_len_i))
             inter_word = np.zeros((t_w_len_i))
@@ -175,9 +175,6 @@ class MorseGenerator:
 
 
 
-
-
-
 if __name__ == "__main__":
     gen = MorseGenerator()
 
@@ -204,6 +201,7 @@ if __name__ == "__main__":
     print("Testing timing string generator...")
 
     assert gen.generate_timing(".- .../---/", False) == "-_---___-_-_-_______---_---_---_______"
+    assert gen.generate_timing(".- .../---/", True) == "-_--- -_-_-/---_---_---/"
 
     # Check that all characters work:
     morsetext = gen.encode_morse("The quick brown fox jumps over the lazy dog".upper())
