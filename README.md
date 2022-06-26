@@ -28,7 +28,7 @@ Please note that this document includes the ARRL Morse Transmission Timing Stand
 
 The ITU Morse Code standard is located on [itu.int](https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.1677-1-200910-I!!PDF-E.pdf).
 
-For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ecprice/wordlist.10000) from MIT. PLEASE NOTE! This list is *not* yet filtered for kid-friendly words.
+For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ecprice/wordlist.10000) from MIT. PLEASE NOTE! This list may still contain non-kid-friendly words. Currently looking out for a properly filtered list.
 
 ## TODO
 - [x] Morse audio
@@ -37,7 +37,7 @@ For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ec
     - [x] Generate timing strings from Morse code
     - [x] Generate sound from timing strings
         - [x] Include settings for WPM, frequency, and volume
-        - [x] Save sounds to file
+        - [x] Save sounds to file (.wav)
     - [x] Implement Farnsworth timing
     - [x] Play pre-generated sound (playsound library)
 
