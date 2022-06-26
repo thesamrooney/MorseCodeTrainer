@@ -150,7 +150,7 @@
        <item>
         <layout class="QHBoxLayout" name="kochLevelInfoLayout">
          <item>
-          <widget class="QLabel" name="newCharsTitle">
+          <widget class="QLabel" name="kochNewCharsTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -163,14 +163,14 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="newChars">
+          <widget class="QLabel" name="kochNewChars">
            <property name="text">
             <string>K, M</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="newCharsListenBtn">
+          <widget class="QPushButton" name="kochNewCharsListenBtn">
            <property name="text">
             <string>Listen</string>
            </property>
@@ -194,7 +194,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="gradeTitle">
+          <widget class="QLabel" name="kochGradeTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -207,7 +207,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="gradePercent">
+          <widget class="QLabel" name="kochGradePercent">
            <property name="text">
             <string>___%</string>
            </property>
@@ -219,9 +219,6 @@
      </item>
      <item row="4" column="0">
       <widget class="QPlainTextEdit" name="decodedUserInput">
-       <property name="plainText">
-        <string/>
-       </property>
        <property name="placeholderText">
         <string>Enter transcribed characters here.</string>
        </property>
@@ -243,14 +240,14 @@
      <item row="3" column="0">
       <layout class="QHBoxLayout" name="kochHorizontalLayout3">
        <item>
-        <widget class="QPushButton" name="startLevelBtn">
+        <widget class="QPushButton" name="kochStartLevelBtn">
          <property name="text">
           <string>Begin Listening</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="autoGradeBtn">
+        <widget class="QPushButton" name="kochAutoGradeBtn">
          <property name="text">
           <string>Grade Transcription</string>
          </property>
@@ -263,7 +260,7 @@
        <item>
         <layout class="QVBoxLayout" name="kochLevelLayout">
          <item>
-          <widget class="QLabel" name="kochLevelSpin">
+          <widget class="QLabel" name="kochLevelSpinTitle">
            <property name="text">
             <string>Level</string>
            </property>
@@ -273,7 +270,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox">
+          <widget class="QSpinBox" name="kochLevelSpin">
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
@@ -287,7 +284,7 @@
        <item>
         <layout class="QVBoxLayout" name="kochCharWpmLayout">
          <item>
-          <widget class="QLabel" name="kochCharWpmSpin">
+          <widget class="QLabel" name="kochCharWpmSpinTitle">
            <property name="text">
             <string>Character WPM</string>
            </property>
@@ -297,7 +294,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_2">
+          <widget class="QSpinBox" name="kochCharWpmSpin">
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
@@ -317,7 +314,7 @@
        <item>
         <layout class="QVBoxLayout" name="kochFarnsworthLayout">
          <item>
-          <widget class="QLabel" name="kochFarnsWpmSpin">
+          <widget class="QLabel" name="kochFarnsWpmSpinTitle">
            <property name="text">
             <string>Farnsworth WPM</string>
            </property>
@@ -327,7 +324,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_3">
+          <widget class="QSpinBox" name="kochFarnsworthWpmSpin">
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
