@@ -112,7 +112,7 @@ class MorseGenerator:
                 raise ValueError("Invalid ITU Morse code character \"" + c + "\".")
         return "".join(output)
 
-    def generate_audio(self, timing:str, fname:str="file.wav", freq:int=1000, wpm:int=20, farnsworth:int=-1, vol:int=100, smoothing_kernel:list=np.ones(100)/100) -> str:
+    def generate_audio(self, timing:str, fname:str="file.wav", freq:int=1000, wpm:int=20, farnsworth:int=-1, vol:int=100, smoothing_kernel:list=np.ones(100)/100) -> None:
         # we know a standard word is 50 units long (this is unit tested as well)
         unit_period = 1.2 / wpm  # in seconds. Formula taken from the ARRL Morse Transmission Timing Standard (see README.md)
         unit_len_i = len(np.arange(0, unit_period, 1/self.sample_rate))  # unit length as int
@@ -168,8 +168,9 @@ class MorseGenerator:
         morse_heaviside = np.convolve(morse_heaviside, smoothing_kernel)
 
         signal_t = np.array(range(len(morse_heaviside))) * (1/self.sample_rate)
-        signal = np.sin(2 * np.pi * freq * signal_t) * morse_heaviside * (vol / 100)
+        signal = (np.sin(2 * np.pi * freq * signal_t) * morse_heaviside * (vol / 100)).clip(-1, 1)
         int_signal = np.int16(signal * 32767)
+        
 
         wavfile.write(fname, self.sample_rate, int_signal)
 
