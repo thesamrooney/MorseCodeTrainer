@@ -30,6 +30,8 @@ The ITU Morse Code standard is located on [itu.int](https://www.itu.int/dms_pubr
 
 For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ecprice/wordlist.10000) from MIT. PLEASE NOTE! This list may still contain non-kid-friendly words. Currently looking out for a properly filtered list.
 
+This program uses the same word order as [lcwo.net](https://lcwo.net), the popular online Morse code training tool.
+
 ## TODO
 - [x] Morse audio
     - [x] Generate Morse code messages from text
@@ -48,7 +50,7 @@ For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ec
     - [x] Generate training data
         - [x] Random character mode (with limited selection of characters)
         - [x] Random English words mode (with limited selection of characters)
-            - [ ] Filter word list (clean words only!)
+            - [x] Filter word list (clean words only!) (done manually, likely better to find a new word list)
         - [ ] Excerpts from the wild? (for review mode)
     - [ ] Session
         - [ ] Investigate session length(s)
@@ -60,12 +62,15 @@ For the English words mode, we use a [list of 10k words](https://www.mit.edu/~ec
             - [ ] Automatically calculated accuracy %
             - [ ] Grade by word, then by letter?
     - [ ] Progression
-        - [ ] Character learn order
+        - [x] Character learn order
         - [ ] Save progress per character
         - [ ] Save progress in CSV format (for later graphing)?
     - [ ] GUI
-        - [ ] Investigate cross-platform GUI libraries
+        - [x] Investigate cross-platform GUI libraries (Qt5)
             - [ ] Would a mobile app be worth it?
+        - [x] Implement "listen to new chars" button
+        - [x] Implement "listed to level" button
+        - [ ] Implement "auto grade" button
         - [ ] Graphing progress?
         - [ ] Create flow chart / state machine for GUI flow
 
