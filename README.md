@@ -35,6 +35,9 @@ This program uses the same word order as [lcwo.net](https://lcwo.net), the popul
 ## Dependencies
 
 numpy (to generate audio)
+
 scipy (to create .wav files from numpy audio)
+
 playsound v1.2.2 (to play .wav files)
+
 pyqt5 (for GUI)
